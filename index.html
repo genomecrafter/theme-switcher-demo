@@ -5,12 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Light/Dark Mode Toggle</title>
   <style>
-    body {
-      background-color: white;
-      color: black;
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      transition: all 0.3s ease;
+    :root {
+    --bg-color: white;
+    --text-color: black;
+  }
+
+  body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    transition: all 0.3s ease;
+  }
+
+    .toggle-container {
+      margin-top: 20px;
     }
 
     body.dark-mode { background: #121212; color: #e0e0e0; }
