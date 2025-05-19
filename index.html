@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Light Mode Page</title>
+  <title>Light/Dark Mode Toggle</title>
   <style>
     body {
       background-color: white;
@@ -12,10 +12,30 @@
       padding: 20px;
       transition: all 0.3s ease;
     }
+
+    body.dark-mode { background: #121212; color: #e0e0e0; }
+
+    .toggle-container {
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
   <h1>Hello, World!</h1>
-  <p>This is a simple light mode page.</p>
+  <p>This is a simple page with light/dark mode toggle.</p>
+
+  <div class="toggle-container">
+    <label>
+      <input type="checkbox" id="darkModeToggle" />
+      Enable Dark Mode
+    </label>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('darkModeToggle');
+    toggle.addEventListener('change', function () {
+      document.body.classList.toggle('dark-mode', this.checked);
+    });
+  </script>
 </body>
 </html>
